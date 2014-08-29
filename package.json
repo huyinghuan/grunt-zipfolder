@@ -1,0 +1,43 @@
+{
+  "name": "klyg-zipfolder",
+  "description": "A Grunt-plugin,zip folder after build",
+  "version": "0.0.1",
+  "homepage": "https://github.com/huyinghuan/grunt-zipfolder",
+  "author": {
+    "name": "huyinghuan",
+    "email": "ec.huyinghuan@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/huyinghuan/grunt-zipfolder"
+  },
+  "bugs": {
+    "url": "https://github.com/huyinghuan/grunt-zipfolder/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/huyinghuan/grunt-file2head/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "easy-zip": "0.0.4"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin",
+    "zip folder"
+  ]
+}
