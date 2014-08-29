@@ -1,14 +1,6 @@
 # Created by .gitignore support plugin (hsz.mobi)
 ### Node template
-# Logs
-logs
-*.log
-
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-
-
+build
 # Dependency directory
 # Commenting this out is preferred by some people, see
 # https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
