@@ -86,7 +86,7 @@ grunt.initConfig(
   the folder need be zip
   
 ### task.dest
-  the path where the zip file will be save
+  the path where the zip file will be saved
   
 ## LICENSE
 MIT
