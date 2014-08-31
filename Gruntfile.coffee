@@ -7,5 +7,10 @@ module.exports = (grunt)->
       build:
         folder: "build"
         dest: "build.zip"
+      test:
+        folder: "build"
+      test1:
+        folder: "build"
+        dest: "/home/ec/t/t.zip"
   )
   grunt.loadTasks 'tasks'
