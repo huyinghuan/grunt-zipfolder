@@ -4,13 +4,18 @@ module.exports = (grunt)->
     zipfolder:
       options:
         hash: 'md5'
-      build:
+      zipFolder:
         folder: "build"
         dest: "build.zip"
-      test:
+      noTarget:
         folder: "build"
-      test1:
+      detailPath:
         folder: "build"
         dest: "/home/ec/t/t.zip"
+      zipFiles:
+        src: "build/js/*.js"
+        extend: false
+      zipCss:
+        src: "build/css/*.css"
   )
   grunt.loadTasks 'tasks'

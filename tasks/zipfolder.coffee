@@ -10,14 +10,17 @@ module.exports = (grunt)->
 
     defaultOptions =
       hash: 'md5'
+      extend: true #压缩多个文件时，是否按原有目录压缩
+
     options = this.options defaultOptions
     zipFolder = @data.folder
     zipFiles = @data.src
-    filePath =  @data.dest or "#{zipFolder}.zip"
-    hash = options.hash
-    if zipFolder
-      _utils.zipFolder zipFolder, filePath, hash, completeCallback
 
-    filePath = @data.dest or "#{@target}.zip"
+    if zipFolder
+      #目标文件不存在则设置压缩目录为文件名
+      filePath =  @data.dest or "#{zipFolder}.zip"
+      _utils.zipFolder zipFolder, filePath, options, completeCallback
+
     if zipFiles
-      _utils.zipFiles zipFiles, filePath, hash, completeCallback
+      filePath = @data.dest or "#{@target}.zip"
+      _utils.zipFiles zipFiles, filePath, options, completeCallback
