@@ -35,6 +35,7 @@ grunt.initConfig(
 
 ## options
   [optional] Object
+
   setting of zipfolder
 
 ### options.hash
@@ -94,10 +95,12 @@ grunt.initConfig(
 
 ### options.extend
   [optional] Boolean. default: ture.
+
   compress files use file availibalfull path ? it's available when compress files.
 
 ### options.cwd
   [optional] String. default: ''
+
   compress files where is in director ```cwd```
 
 
@@ -105,27 +108,33 @@ grunt.initConfig(
 
 ### tasks.folder
   [optional] String. default: undefined
+
   the folder need be compressed. Must choose one of them ```tasks.folder``` or ```tasks.src```.
 
 ### tasks.src
   [options] String or String Array. default: undefined.
+
   the files need be compressed.   Must choose one of them ```tasks.folder``` or ```tasks.src```.
 
 ### task.dest
   [optioanl] String.
+
   the path where the compressed file will be saved. if it is undefined, then the ```dest``` will be
-  the folder name (when compress a folder) or the task name (when compress files)
+the folder name (when compress a folder) or the task name (when compress files)
 
 ### task.extend
   [optional] Boolean.
+
   it will override the ```options.extend```
 
 ### task.cwd
   [optional] String.
+
   it will override the ```options.cwd```
 
 ### task.hash
   [optional] String.
+
   it will override the ```options.hash```
 
 ## History
