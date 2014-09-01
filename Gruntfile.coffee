@@ -5,17 +5,18 @@ module.exports = (grunt)->
       options:
         hash: 'md5'
       zipFolder:
-        folder: "build"
-        dest: "build.zip"
+        folder: "be-ziped-folder"
+        dest: "be-ziped-folder.zip"
       noTarget:
-        folder: "build"
-      detailPath:
-        folder: "build"
-        dest: "/home/ec/t/t.zip"
-      zipFiles:
-        src: "build/js/*.js"
+        folder: "be-ziped-folder"
+      zipFilesExtend:
+        src: ["be-ziped-folder/*.js", "be-ziped-folder/*/*.js"]
+        extend: true
+      zipFilesNotExtend:
+        src:  ["be-ziped-folder/*.js", "be-ziped-folder/*/*.js"]
         extend: false
-      zipCss:
-        src: "build/css/*.css"
+      zipFilesSetCwd:
+        cwd: 'be-ziped-folder'
+        src: ["*.js", "*/*.js"]
   )
   grunt.loadTasks 'tasks'

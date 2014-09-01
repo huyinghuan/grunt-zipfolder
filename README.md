@@ -16,13 +16,25 @@ grunt.initConfig(
     zipfolder:
       options:
         hash: 'md5'
-      build:
-        folder: "build"
-        dest: "build.zip"
+      zipFolder:
+        folder: "be-ziped-folder"
+        dest: "be-ziped-folder.zip"
+      noTarget:
+        folder: "be-ziped-folder"
+      zipFilesExtend:
+        src: ["be-ziped-folder/*.js", "be-ziped-folder/*/*.js"]
+        extend: true
+      zipFilesNotExtend:
+        src:  ["be-ziped-folder/*.js", "be-ziped-folder/*/*.js"]
+        extend: false
+      zipFilesSetCwd:
+        cwd: 'be-ziped-folder'
+        src: ["*.js", "*/*.js"]
   )
 ```
 
-## options [optional]
+## options
+  [optional] Object
   setting of zipfolder
 
 ### options.hash
@@ -79,16 +91,55 @@ grunt.initConfig(
   'whirlpool' 
 ]
 ```
-  
+
+### options.extend
+  [optional] Boolean. default: ture.
+  compress files use file availibalfull path ? it's available when compress files.
+
+### options.cwd
+  [optional] String. default: ''
+  compress files where is in director ```cwd```
+
+
 ## tasks
 
 ### tasks.folder
-  the folder need be zip
-  
+  [optional] String. default: undefined
+  the folder need be compressed. Must choose one of them ```tasks.folder``` or ```tasks.src```.
+
+### tasks.src
+  [options] String or String Array. default: undefined.
+  the files need be compressed.   Must choose one of them ```tasks.folder``` or ```tasks.src```.
+
 ### task.dest
-  the path where the zip file will be saved
-  
+  [optioanl] String.
+  the path where the compressed file will be saved. if it is undefined, then the ```dest``` will be
+  the folder name (when compress a folder) or the task name (when compress files)
+
+### task.extend
+  [optional] Boolean.
+  it will override the ```options.extend```
+
+### task.cwd
+  [optional] String.
+  it will override the ```options.cwd```
+
+### task.hash
+  [optional] String.
+  it will override the ```options.hash```
+
+## History
+
+v0.0.2
+
+1. add zip files
+
+V0.0.1
+
+1. zip folder
+
 ## LICENSE
 MIT
 
   see https://github.com/huyinghuan/grunt-file2head/blob/master/LICENSE-MIT
+

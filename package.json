@@ -1,7 +1,7 @@
 {
   "name": "klyg-zipfolder",
   "description": "A Grunt-plugin,zip folder after build",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/huyinghuan/grunt-zipfolder",
   "author": {
     "name": "huyinghuan",

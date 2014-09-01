@@ -1,11 +1,26 @@
 grunt = require 'grunt'
 _fs = require 'fs'
+_path = require 'path'
+_crypto = require 'crypto'
+
 _mkdirp = require 'mkdirp'
 _async = require 'async'
-_crypto = require 'crypto'
 _EasyZip = require('easy-zip').EasyZip
 
 Utils = module.exports = {}
+#浅继承
+Utils.extend = (son, father)->
+  son[key] = value for key, value of father
+
+#组合path路径
+Utils.getJoinPath = (srcs, cwd)->
+  cwd = '' if grunt.util.kindOf(cwd) isnt 'string'
+  srcs = [].concat srcs
+  queue = []
+  queue.push _path.join(cwd, src) for src in srcs
+  files = []
+  files = files.concat grunt.file.expand filePath for filePath in queue
+  return files
 
 #确保文件所在的文件夹存在
 promissFolder = (path)->
@@ -57,12 +72,9 @@ Utils.zipFolder = (zipFolder, filePath, options, cb)->
 Utils.zipFiles = (srcs, filePath, options, cb)->
   hash = options.hash
   extend = options.extend
-  srcs = [].concat srcs
-  files = []
-  files = files.concat grunt.file.expand src for src in srcs
   zip = new _EasyZip()
   queue = []
-  for file in files
+  for file in srcs
     targetFile = if extend then file else getFileName(file)
     queue.push
       source: file

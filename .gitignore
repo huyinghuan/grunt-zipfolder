@@ -8,3 +8,5 @@ node_modules
 build.zip
 # Users Environment Variables
 .idea
+
+*.zip
